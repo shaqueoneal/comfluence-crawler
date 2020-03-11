@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .head {
+            height: 40px;
+            background: deepskyblue;
+        }
+        .head > p{
+            margin: 0 0 0 20px;
+            line-height: 40px;
+        }
+        .main {
+            display: flex;
+            height: 100%;
+        }
+
+        .left {
+            width: 300px;
+            border-right: 1px solid lightgrey;
+            overflow: auto;
+        }
+        .left a {
+            font-family: Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1;
+            visibility: visible;
+            list-style: none;
+            list-style-type: none;
+            text-decoration: none;
+            padding: 0;
+            color: #3b73af;
+            white-space: nowrap;
+            display: inline-block;
+            padding-right: 10px;
+        }
+        .left a:visited {
+            color: #af58a8; /*已访问的链接颜色*/
+        }
+        .right {
+            flex: 1;
+            margin: 0;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="head"></div>
+<div class="main">
+    <div class="left">
+    </div>
+    <iframe class="right" name="view_frame"></iframe>
+</div>
+</body>
+<script>
+  function handleClick(target) {
+    document.getElementsByName('view_frame')[0].src = target.href;
+  }
+</script>
+</html>
